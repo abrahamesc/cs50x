@@ -3,20 +3,29 @@
 
 int main(void)
 {
-   int h;
+   int height;
    do 
    {
-      h = get_int("Height: ");
+      height = get_int("Height: ");
    }
-   while (h < 1 || h > 8);
+   while (height < 1 || height > 8);
 
-   for (int i = 1 ; i < h+1; i++)
+   for (int i = 1; i < height + 1 ; i++)
    {
-      for (int j = 0; j < i; j++)
-      {   
-        printf("#");
+      for (int h = height - i ; h > 0; h--)
+      {
+         printf(" ");
       }
-      printf("%-8s", "\n");
+      for (int hash = i; hash > 0; hash--)
+      {
+         printf("#");
+      }     
+      printf("  ");
+      for (int hashl = i; hashl > 0; hashl--)
+      {
+         printf("#");
+      }
+      printf("\n");
    }
 }
 
